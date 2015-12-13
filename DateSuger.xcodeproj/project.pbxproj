@@ -12,6 +12,7 @@
 		12FE177F1C1D6D69006DA324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FE177D1C1D6D69006DA324 /* Main.storyboard */; };
 		12FE17811C1D6D69006DA324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12FE17801C1D6D69006DA324 /* Assets.xcassets */; };
 		12FE17841C1D6D69006DA324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FE17821C1D6D69006DA324 /* LaunchScreen.storyboard */; };
+		12FE178D1C1D6D8D006DA324 /* DateSuger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE178C1C1D6D8D006DA324 /* DateSuger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		12FE17801C1D6D69006DA324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12FE17831C1D6D69006DA324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12FE17851C1D6D69006DA324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12FE178C1C1D6D8D006DA324 /* DateSuger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSuger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				12FE17791C1D6D69006DA324 /* AppDelegate.swift */,
 				12FE177B1C1D6D69006DA324 /* ViewController.swift */,
+				12FE178B1C1D6D8D006DA324 /* Source */,
 				12FE177D1C1D6D69006DA324 /* Main.storyboard */,
 				12FE17801C1D6D69006DA324 /* Assets.xcassets */,
 				12FE17821C1D6D69006DA324 /* LaunchScreen.storyboard */,
@@ -63,6 +66,14 @@
 			);
 			path = DateSuger;
 			sourceTree = "<group>";
+		};
+		12FE178B1C1D6D8D006DA324 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				12FE178C1C1D6D8D006DA324 /* DateSuger.swift */,
+			);
+			path = Source;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12FE177C1C1D6D69006DA324 /* ViewController.swift in Sources */,
+				12FE178D1C1D6D8D006DA324 /* DateSuger.swift in Sources */,
 				12FE177A1C1D6D69006DA324 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +296,7 @@
 				12FE178A1C1D6D69006DA324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
