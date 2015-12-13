@@ -13,25 +13,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let date1 = NSDate()
+        let date1 = NSDate.dateWithYear(2018, month: 3, day: 28)!
+        let date2 = date1.dateByAddingDays(23)
+        let date3 = date2 + .Year(1) + .Month(4)
         
-        let components = NSDateComponents()
-        components.day = 23
-        let calenar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let date2 = (calenar?.dateByAddingComponents(components, toDate: date1, options: []))!
-        
-        let date3 = date1.dateByAddingDays(23)
-        
-        let date4 = date1 + .Day(23)
-        
-        print("\(date2)  \n\(date3)  \n\(date4)")
-        
-        if date4 > date1 {
-            print("")
+        if date1 < date2 {
+            print("2333")
         }
-        if date4 >= date3 {
-            print("")
+        if date3 == NSDate() {
+            print("What ~")
         }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
