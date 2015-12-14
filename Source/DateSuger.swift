@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DEDateComponentType {
+enum DSDateComponentType {
     case Era
     case Year
     case Month
@@ -122,7 +122,7 @@ extension NSDate {
     public func dayOfYear(withCalendar calendar: NSCalendar) -> Int {
         return componentForType(.DayOfYear, calendar: calendar)
     }
-    func componentForType(type: DEDateComponentType, var calendar: NSCalendar?) -> Int {
+    func componentForType(type: DSDateComponentType, var calendar: NSCalendar?) -> Int {
         if calendar == nil {
             calendar = DefaultCalendar
         }

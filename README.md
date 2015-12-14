@@ -70,21 +70,21 @@ let weekday = NSDate().weekday
 
 支持的日期信息有：
 
-```
-Era
-Year
-Month
-Day
-Hour
-Minute
-Second
-Quarter
-Weekday
-WeekdayOridinal
-WeekOfMonth
-WeekOfYear
-DayOfYear
-```
+|Component|
+|---|
+|Era|
+|Year|
+|Day|
+|Hour|
+|Minute|
+|Second|
+|Quarter|
+|Weekday|
+|WeekdayOrdinal|
+|WeekOfMonth|
+|WeekOfYear|
+|DayOfYear|
+
 
 ### 其他信息判断
 
