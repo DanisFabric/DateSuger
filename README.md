@@ -122,6 +122,15 @@ if date1 == date2 {
 }
 ```
 
+### 获得日期的时间差
+
+Date Suger 能够快速的获取两个日期间隔的年数，天数等信息。
+
+```
+let years1 = NSDate.yearsFrom(date1, toDate: NSDate())
+let years2 = NSDate().yearsFrom(date1)
+```
+
 ### License
 
 The MIT License (MIT)

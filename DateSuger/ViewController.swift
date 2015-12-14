@@ -23,9 +23,6 @@ class ViewController: UIViewController {
         if date3 == NSDate() {
             print("What ~")
         }
-        let func1 = NSDate.daysFrom(date1)
-        //科里化
-        print(func1(date2))
     }
 
     override func didReceiveMemoryWarning() {

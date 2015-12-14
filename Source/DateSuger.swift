@@ -18,7 +18,7 @@ enum DSDateComponentType {
     case Second
     case Quarter
     case Weekday
-    case WeekdayOridinal
+    case WeekdayOrdinal
     case WeekOfMonth
     case WeekOfYear
     case DayOfYear
@@ -72,7 +72,7 @@ extension NSDate {
         return componentForType(.Weekday, calendar: nil)
     }
     public var weekdayOrdinal: Int {
-        return componentForType(.WeekdayOridinal, calendar: nil)
+        return componentForType(.WeekdayOrdinal, calendar: nil)
     }
     public var weekOfMonth: Int {
         return componentForType(.WeekOfMonth, calendar: nil)
@@ -111,7 +111,7 @@ extension NSDate {
         return componentForType(.Weekday, calendar: calendar)
     }
     public func weekdayOrdinal(withCalendar calendar: NSCalendar) -> Int {
-        return componentForType(.WeekdayOridinal, calendar: calendar)
+        return componentForType(.WeekdayOrdinal, calendar: calendar)
     }
     public func weekOfMonth(withCalendar calendar: NSCalendar) -> Int {
         return componentForType(.WeekOfMonth, calendar: calendar)
@@ -147,7 +147,7 @@ extension NSDate {
             return dateComponents.quarter
         case .Weekday:
             return dateComponents.weekday
-        case .WeekdayOridinal:
+        case .WeekdayOrdinal:
             return dateComponents.weekdayOrdinal
         case .WeekOfMonth:
             return dateComponents.weekOfMonth
