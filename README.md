@@ -108,7 +108,7 @@ let date2 = NSDate.dateWithYear(2015, month: 3, day: 28, hour: 3, minute: 12, se
 
 ### 日期比较
 
-能够直接通过操作符来比较NSDate，这样是不是方便了很多
+DateSuger 实现了`Comparable`协议，能够通过`==`,`>`,`<`,`>=`,`<=`来对日期进行比较。
 
 ```
 if date1 > date2 {
