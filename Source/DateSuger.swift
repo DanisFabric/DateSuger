@@ -295,105 +295,54 @@ extension NSDate {
 
 // MARK: - Interval
 extension NSDate {
-    // Interval From
-    public func yearsFrom(date: NSDate) -> Int{
-        let components = DefaultCalendar.components(.Year, fromDate: date, toDate: self, options: [])
-        
+    public static func yearsFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Year, fromDate: date, toDate: toDate, options: [])
         return components.year
     }
-    public func monthsFrom(date: NSDate) -> Int {
-        let components = DefaultCalendar.components(.Month, fromDate: date, toDate: self, options: [])
+    public static func monthsFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Month, fromDate: date, toDate: toDate, options: [])
         return components.month
     }
-    public func weeksFrom(date: NSDate) -> Int {
-        let components = DefaultCalendar.components(.WeekOfYear, fromDate: date, toDate: self, options: [])
+    public static func weeksFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.WeekOfYear, fromDate: date, toDate: toDate, options: [])
         return components.weekOfYear
     }
-    public func daysFrom(date: NSDate) -> Int {
-        let components = DefaultCalendar.components(.Day, fromDate: date, toDate: self, options: [])
+    public static func daysFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Day, fromDate: date, toDate: toDate, options: [])
         return components.day
     }
-    public func hoursFrom(date: NSDate) -> Double {
-        return self.timeIntervalSinceDate(date) / 3600.0
+    public static func hoursFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Hour, fromDate: date, toDate: toDate, options: [])
+        return components.hour
     }
-    public func minutesFrom(date: NSDate) -> Double {
-        return self.timeIntervalSinceDate(date) / 60.0
+    public static func minutesFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Minute, fromDate: date, toDate: toDate, options: [])
+        return components.minute
     }
-    public func secondsFrom(date: NSDate) -> Double {
-        return self.timeIntervalSinceDate(date)
+    public static func secondsFrom(date: NSDate, toDate: NSDate) -> Int {
+        let components = DefaultCalendar.components(.Second, fromDate: date, toDate: toDate, options: [])
+        return components.second
     }
-}
-
-// MARK: - Operator Overloading
-
-//MARK: Comparision
-extension NSDate : Comparable {}
-
-public func > (left: NSDate, right: NSDate) -> Bool {
-    if left.timeIntervalSince1970 > right.timeIntervalSince1970 {
-        return true
+    
+    public func yearsFrom(date: NSDate) -> Int{
+        return NSDate.yearsFrom(date, toDate: self)
     }
-    return false
-}
-public func < (left:NSDate, right: NSDate) -> Bool {
-    if left.timeIntervalSince1970 < right.timeIntervalSince1970 {
-        return true
+    public func monthsFrom(date: NSDate) -> Int {
+        return NSDate.monthsFrom(date, toDate: self)
     }
-    return false
-}
-
-// MARK: Calculation
-public func + (left: NSDate, right: NSTimeInterval) -> NSDate {
-    return NSDate(timeInterval: right, sinceDate: left)
-}
-public func - (left: NSDate, right: NSTimeInterval) -> NSDate {
-    return NSDate(timeInterval: -right, sinceDate: left)
-}
-
-public enum DateCane {
-    case Year(Int)
-    case Month(Int)
-    case Week(Int)
-    case Day(Int)
-    case Hour(Int)
-    case Minute(Int)
-    case Second(Int)
-}
-
-public func + (left: NSDate, right: DateCane) -> NSDate {
-    switch right {
-    case .Year(let years):
-        return left.dateByAddingYears(years)
-    case .Month(let months):
-        return left.dateByAddingMonths(months)
-    case .Week(let weeks):
-        return left.dateByAddingWeeks(weeks)
-    case .Day(let days):
-        return left.dateByAddingDays(days)
-    case .Hour(let hours):
-        return left.dateByAddingHours(hours)
-    case .Minute(let minutes):
-        return left.dateByAddingMinutes(minutes)
-    case .Second(let seconds):
-        return left.dateByAddingSeconds(seconds)
+    public func weeksFrom(date: NSDate) -> Int {
+        return NSDate.weeksFrom(date, toDate: self)
+    }
+    public func daysFrom(date: NSDate) -> Int {
+        return NSDate.daysFrom(date, toDate: self)
+    }
+    public func hoursFrom(date: NSDate) -> Int {
+        return NSDate.hoursFrom(date, toDate: self)
+    }
+    public func minutesFrom(date: NSDate) -> Int {
+        return NSDate.minutesFrom(date, toDate: self)
+    }
+    public func secondsFrom(date: NSDate) -> Int {
+        return NSDate.secondsFrom(date, toDate: self)
     }
 }
-public func - (left: NSDate, right: DateCane) -> NSDate {
-    switch right {
-    case .Year(let years):
-        return left.dateBySubtractingYears(years)
-    case .Month(let months):
-        return left.dateBySubtractingMonths(months)
-    case .Week(let weeks):
-        return left.dateBySubtractingWeeks(weeks)
-    case .Day(let days):
-        return left.dateBySubtractingDays(days)
-    case .Hour(let hours):
-        return left.dateBySubtractingHours(hours)
-    case .Minute(let minutes):
-        return left.dateBySubtractingMinutes(minutes)
-    case .Second(let seconds):
-        return left.dateBySubtractingSeconds(seconds)
-    }
-}
-

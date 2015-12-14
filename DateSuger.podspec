@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name = 'DateSuger'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.summary = 'Make NSDate much more easier to use'
   s.homepage = 'https://github.com/danisfabric/DateSuger'
   s.license = 'MIT'
